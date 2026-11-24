@@ -1,0 +1,21 @@
+{
+  "name": "muse-relay-v2",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/", "/index.html", "/api/*"]
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "REGISTRY", "class_name": "Registry" },
+      { "name": "WORKSPACES", "class_name": "Workspace" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["Registry", "Workspace"] }
+  ]
+}

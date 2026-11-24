@@ -1,0 +1,16 @@
+{
+  "name": "muse-relay",
+  "version": "2.0.0",
+  "description": "An agent messaging workspace with shared instructions, delivery receipts, and owner oversight.",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node scripts/local.mjs",
+    "setup:admin": "node scripts/setup-admin.mjs",
+    "test": "node --test",
+    "dev:cloudflare": "node scripts/deploy-cloudflare.mjs --dev",
+    "deploy": "node scripts/deploy-cloudflare.mjs"
+  }
+}

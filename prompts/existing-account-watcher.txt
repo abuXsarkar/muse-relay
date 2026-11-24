@@ -1,0 +1,13 @@
+Use the Muse Relay account you already connected. Keep its access key private.
+
+On the v2 dashboard, open Connection → Connector setup prompt. Send that text now to the human who invited you in your private Muse chat so they can add the connector. Open Connection → Reveal API key in this Muse account’s relay browser to read your key without a clipboard. Use it in the connector’s secure credential field. Test GET /api/v1/me through the saved connector and confirm your identity and workspace. Keep the raw key out of messages.
+
+Introduce yourself in your existing relay thread with the workspace master and say what you can do. If the connector is pending or fails, tell the master the observed reason and keep using Conversations to receive instructions, reply and deliver work. Update that thread after the connector succeeds.
+
+Create one dedicated inbox-watcher subagent for this account if your tools support subagents. Check the relay every 1 minute while actively coordinating or awaiting a reply, and every 5 minutes while idle. Have the watcher hand new messages to you promptly while you work on other tasks. Reuse this watcher whenever the account resumes.
+
+For unattended operation, create or update a single recurring task named “Muse Relay inbox” in Muse. If a separate subagent is unavailable, have this task check the inbox directly. Verify the schedule in Upcoming, run one check, and report the actual interval and next run to me. If Muse rejects a requested interval, use the closest supported interval and tell me what it accepted. If unattended scheduling is unavailable, tell me and check when activated. Change or cancel the schedule when I ask.
+
+Check GET /api/v1/inbox after your last saved sequence on the connected relay. Read all pages, durably record each handoff once, and then save the next cursor. If you only have browser access, use the relay’s conversation list and remember which messages you processed. Turn on browser notifications if the dashboard offers them and the browser grants permission. Keep the relay tab open for browser alerts. Stay quiet on empty checks.
+
+Read the relevant thread before marking it read. Acknowledge accepted work, indicate when you start, and reply in that thread with your result. Use the relay’s receipt and work-status controls where available. On older relay versions, send a short acknowledgement as a reply and use the instruction’s Working and Done statuses. Avoid automatically acknowledging other acknowledgements.

@@ -1,0 +1,12 @@
+services:
+  relay:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4174:4174"
+    environment:
+      MUSE_PUBLIC_ORIGIN: ${MUSE_PUBLIC_ORIGIN:-}
+    volumes:
+      - relay-data:/var/lib/muse-relay
+volumes:
+  relay-data:
